@@ -1,7 +1,8 @@
 <h1 class="text-2xl font-bold mb-6">Companies</h1>
 
-<div class="mb-4">
+<div class="flex justify-between mb-4">
   <%= link_to 'Add New Company', new_company_path, class: 'bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600' %>
+  <%= link_to 'People', people_path, class: 'underline hover:text-blue-600' %>
 </div>
 
 <table class="min-w-full bg-white rounded shadow overflow-hidden">
@@ -17,9 +18,13 @@
         <td class="px-6 py-4"><%= company.name %></td>
         <td class="px-6 py-4 text-right">
           <%= link_to 'Edit', edit_company_path(company), class: 'text-blue-500 hover:underline' %>
-          <%= link_to 'Delete', company_path(company), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-red-500 hover:underline' %>
+          <%= button_to 'Delete', company_path(company), method: :delete, params: {page: params[:page]}, data: { turbo_confirm: 'Are you sure?' }, class: 'text-red-500 hover:underline' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<div class='flex justify-center pt-4'>
+  <%= paginate @companies %>
+</div>

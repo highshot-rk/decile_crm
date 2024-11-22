@@ -28,6 +28,10 @@ gem "solid_cable"
 gem 'activerecord-import'
 gem 'seed-fu'
 gem 'enumerize'
+gem 'turbo-rails'
+gem 'stimulus-rails'
+gem 'importmap-rails'
+gem 'kaminari'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false

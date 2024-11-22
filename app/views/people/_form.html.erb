@@ -1,0 +1,36 @@
+<div class="space-y-4">
+  <div>
+    <%= form.label :first_name, "First Name", class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_field :first_name, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm", required: true %>
+  </div>
+
+  <div>
+    <%= form.label :last_name, "Last Name", class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_field :last_name, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm", required: true %>
+  </div>
+
+  <div>
+    <%= form.label :email, "Email", class: "block text-sm font-medium text-gray-700" %>
+    <%= form.email_field :email, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm", required: true %>
+  </div>
+
+  <div>
+    <%= form.label :phone, "Phone", class: "block text-sm font-medium text-gray-700" %>
+    <%= form.telephone_field :phone, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" %>
+  </div>
+
+  <div>
+    <%= form.label :company_id, "Company", class: "block text-sm font-medium text-gray-700" %>
+    <%= form.collection_select :company_id, @companies, :id, :name, { include_blank: 'No company' }, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" %>
+  </div>
+
+  <div>
+    <%= form.label :stage, "Stage", class: "block text-sm font-medium text-gray-700" %>
+    <%= form.select :stage, Person.stage.options.map { |label, value| [label, value] }, { include_blank: false }, { class: 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm' } %>
+  </div>
+
+  <div>
+    <%= form.label :probability, "Win Probability (%)", class: "block text-sm font-medium text-gray-700" %>
+    <%= form.number_field :probability, step: 1, min: 0, max: 100, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" %>
+  </div>
+</div>

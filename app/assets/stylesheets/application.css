@@ -8,3 +8,20 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+
+ .pagination {
+  display: flex;
+  gap: 20px;
+
+  .current {
+    color: white;
+    background: blue;
+    border-radius: 100%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ }
