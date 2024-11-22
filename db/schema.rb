@@ -25,9 +25,9 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_22_150256) do
     t.string "last_name"
     t.string "email"
     t.string "phone"
-    t.integer "stage"
-    t.integer "probability"
-    t.bigint "company_id", null: false
+    t.integer "stage", default: 0
+    t.integer "probability", default: 0
+    t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_people_on_company_id"
