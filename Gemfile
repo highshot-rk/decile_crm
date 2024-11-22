@@ -24,6 +24,11 @@ gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
 
+# added gems
+gem 'activerecord-import'
+gem 'seed-fu'
+gem 'enumerize'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
