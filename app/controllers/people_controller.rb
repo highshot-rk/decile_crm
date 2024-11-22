@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  before_action :set_person, only: %i[show edit update destroy move_stage]
+  before_action :set_person, only: %i[edit update destroy move_stage]
 
   def index
     @people_by_stage = Person.all.group_by(&:stage)
